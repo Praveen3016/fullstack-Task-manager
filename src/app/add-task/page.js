@@ -31,7 +31,7 @@ console.log(userid)
     e.preventDefault();
     console.log(e.target)
 try{
-    await axios.post(`http://localhost:3000/api/works`,task)
+    await axios.post(`${process.env.BASE_URL}/api/works`,task)
 .then((response) => console.log(response.data))
 toast.success("task is added",{
   position: "top-center",

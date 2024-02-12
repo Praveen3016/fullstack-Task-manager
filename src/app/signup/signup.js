@@ -18,7 +18,7 @@ function Signup() {
     e.preventDefault()
     console.log(userData)
     try {
-      await axios.post("https://core-next-glb9.vercel.app/api/user", userData)
+      await axios.post(`${process.env.BASE_URL}/api/user`, userData)
         .then((response) =>{
           console.log(response.data)
           toast.success("Sign uped", {

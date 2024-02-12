@@ -49,7 +49,7 @@ function page() {
    async function posthandle()
     {
     
-     await axios.post(`http://localhost:3000/api/user`,{
+     await axios.post(`${process.env.BASE_URL}/api/user`,{
        
               "name": "sumit",
               "email": "praveen@gmail.com",

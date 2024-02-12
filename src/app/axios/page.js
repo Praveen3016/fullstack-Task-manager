@@ -10,7 +10,7 @@ function page() {
     const router = useRouter();
 
     const getdata = () =>{
-        axios("http://localhost:3000/api/user")
+        axios(`${process.env.BASE_URL}/api/user`)
         .then((response) =>
         { 
             console.log(response.data)
