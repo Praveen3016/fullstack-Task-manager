@@ -29,7 +29,7 @@ function Login() {
     }
 
     try {
-      axios.post(`${process.env.BASE_URL}/api/login1`, loginData)
+      axios.post(`api/login`, loginData)
         .then((response) => {
           if (response.data.status == 400) {
 console.log("not working")

@@ -17,7 +17,7 @@ useEffect(()=>{
 
     function load()
    {
-       axios.get(`${process.env.BASE_URL}/api/current`)
+       axios.get("http://localhost:3000/api/current")
        .then((userdata) =>{
         console.log(userdata.data)
         setuser(userdata.data.name)

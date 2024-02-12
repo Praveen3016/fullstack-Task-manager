@@ -6,7 +6,7 @@ const config = {
 
 export const connectDb = async () =>{
 
-    if(connection.readyState){
+    if(config.isconnected){
         return
     }
     try

@@ -4,12 +4,13 @@ import jwt from "jsonwebtoken";
 import { NextResponse } from "next/server";
 import { connectDb } from "@/helper/db";
 
-connectDb();
+
 
 export async function POST(request) {
     const { email, password } = await request.json();
   
     try {
+        await connectDb();
         const user = await User.findOne({ email });
         if (!user) {
             throw new Error("User not found");
