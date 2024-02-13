@@ -143,7 +143,7 @@ function Login() {
         toast.success(response.data.message, {
           position: 'top-center',
         });
-        router.push('/show-task');
+        router.push('/');
         setuser(response.data.user);
       }
     } catch (error) {
