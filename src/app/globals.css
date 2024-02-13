@@ -25,9 +25,15 @@
 }
 
 .inputback{
-    background-color: #f3f3f3;
+    background-color: #4b4b4b;
     font-size: 15px;
+    border: #4a4a4a;
 
+}
+.inputbacka{
+    background-color: #868686;
+    font-size: 15px;
+    border: #4a4a4a;
 }
 
 .labell{
@@ -39,3 +45,4 @@
 th ,td{
     color : white;
 }
+

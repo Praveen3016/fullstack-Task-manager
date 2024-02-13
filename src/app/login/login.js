@@ -143,7 +143,7 @@ function Login() {
         toast.success(response.data.message, {
           position: 'top-center',
         });
-        router.push('/about');
+        router.push('/show-task');
         setuser(response.data.user);
       }
     } catch (error) {
@@ -188,7 +188,7 @@ function Login() {
                           placeholder='Enter Password' name='password' />
                       </div>
                       <div className="btb w-100 d-flex justify-content-center">
-                        <button type='submit' className="btn btn-success"> Login </button>
+                        <button type='submit' className="btn mt-2 btn-success"> Login </button>
                       </div>
                     </div>
                   </div>

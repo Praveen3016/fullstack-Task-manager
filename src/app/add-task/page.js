@@ -25,6 +25,15 @@ console.log(userid)
     userId: userid,
   })
 
+  function clearform(){
+    settask({
+      title: "",
+    content: "",
+    status: "",
+    userId: userid,
+    })
+  }
+
   
 
   async function formhandle(e){
@@ -63,14 +72,14 @@ toast.error("something error in post")
         <div className="container">
           <div className="block">
             <div className="row justify-content-center">
-              <div className="col-md-7 col-lg-7 pb-4">
+              <div className="col-md-6 col-lg-6 pb-4">
+<h3 className='text-white text-center mt-5'>Add Task</h3>
 
-
-                <form  className='mb-3 mt-4' onSubmit={formhandle}>
+                <form  className='mb-3 mt-2' onSubmit={formhandle}>
                   <div className="row">
                     <div className="col-12">
                       <div className="form-group">
-                        <label className="text-black" for="fname">Title</label>
+                        <label className="text-white opacity-50" for="fname">Title</label>
                         <input type="text" className="form-control inputback " name='task_title' onChange={(e) => {
                           settask({
                             ...task,
@@ -85,8 +94,8 @@ toast.error("something error in post")
                     </div>
                   </div>
                   <div className="form-group">
-                    <label className="text-black inputback" for="email">Content</label>
-                    <textarea name="task_content"
+                    <label className="text-white opacity-50  " for="email">Content</label>
+                    <textarea name="task_conten t" 
                     onChange={(e) =>{
                       settask({
                         ...task ,
@@ -94,10 +103,10 @@ toast.error("something error in post")
                       })
                     }}
                     value={task.content}
-                     id="" cols="30" rows="10" className='content'></textarea>
+                     id="" cols="30" rows="10" className='content inputback form-control' ></textarea>
                   </div>
                   <div className="status w-100">
-                    <label htmlFor="">Status</label>
+                    <label htmlFor="" className='text-white opacity-50'>Status</label>
                     <select name="task_status" 
                     onChange={(e) =>{
                       settask({
@@ -113,9 +122,9 @@ toast.error("something error in post")
                     </select>
                   </div>
                   <div className='d-flex w-100 justify-content-center m-auto mb-5'>
-                    <div className='d-flex gap-2 m-2'>
-                      <button type='submit'  value='send' className="btn btn-primary ">Add Task</button>
-                      <button className='btn btn-danger '>clear</button>
+                    <div className='d-flex gap-4 m-2'>
+                      <button className='btn btn-primary' type='button' onClick={clearform}>Clear </button>
+                      <button type='submit'  value='send' className="btn btn-success ">Add Task</button>
                     </div>
                   </div>
 

@@ -2,9 +2,11 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
-
+import { useRouter } from 'next/navigation'
 
 function Signup() {
+
+  const router = useRouter();
 
   const [userData, setuserData] = useState({
     name: "",
@@ -18,7 +20,7 @@ function Signup() {
     e.preventDefault()
     console.log(userData)
     try {
-     const response =  await axios.post(`${process.env.BASE_URL}/api/user`, userData)
+     const response =  await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/user`, userData)
        
           console.log(response.data)
           toast.success("Sign uped", {
@@ -41,8 +43,7 @@ function Signup() {
       });
     }
 
-
-
+    router.push('/login');
 
   }
 
