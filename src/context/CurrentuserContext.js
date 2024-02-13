@@ -15,15 +15,15 @@ export function CurrentuserContextProvider({children}) {
 
 useEffect(()=>{
 
-    function load()
+   async function load()
    {
-       axios.get("http://localhost:3000/api/current")
-       .then((userdata) =>{
-        console.log(userdata.data)
-        setuser(userdata.data.name)
-        setfulluser(userdata.data);
-        setuserid(userdata.data._id);
-       })
+       const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/current`);
+
+        console.log(response.data)
+        setuser(response.data.name)
+        setfulluser(response.data);
+        setuserid(response.data._id);
+ 
 
     } 
 

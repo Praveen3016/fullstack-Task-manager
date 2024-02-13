@@ -49,7 +49,7 @@ function page() {
    async function posthandle()
     {
     
-     await axios.post(`${process.env.BASE_URL}/api/user`,{
+    const response =  await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/user`,{
        
               "name": "sumit",
               "email": "praveen@gmail.com",
@@ -61,62 +61,8 @@ function page() {
         headers: {
         "name": "manish" ,
     }})
-      .then((response) => console.log(response.data))
+      console.log(response.data)
     }
-    // async function posthandle() {
-    //   try {
-    //     const response = await axios.post(
-    //       'http://localhost:3000/api/user',
-    //       {
-    //         name: 'sumit',
-    //         email: 'praveen@gmail.com',
-    //         password: 'praveen123',
-    //         profileURL: 'localhost/dfhsbf',
-    //         about: 'this is praveen profile',
-    //       },
-    //       {
-    //         headers: {
-    //           name: 'tilak',
-    //         },
-    //       }
-    //     );
-    
-    //     console.log(response.data);
-    //   } catch (error) {
-    //     console.error('Error making POST request:', error.message);
-    //   }
-    // }
-
-
-
-    // post mathod
-
-//     function posthandle()
-//     {
-
-//     fetch("http://localhost:3000/api/user", {
-//   method: "POST",
-//   headers: {
-//     "Content-type": "application/json; charset=UTF-8"
-//   },
-//   body: JSON.stringify({
-//     "name": "praveen",
-//     "email": "praveen@gmail.com",
-//     "password": "praveen123",
-//     "profileURl": "localhost/dfhsbf",
-//     "about": "this is praveen profile",
-//   }),
-// })
-// .then((response) => response.json() )
-// .then((json) => 
-// {
-//   console.log(json) 
-//   console.log("hello")
-//   setpost([json])
-// });
-
-
-//     }
     
 const router = useRouter();
 

@@ -18,8 +18,8 @@ function Signup() {
     e.preventDefault()
     console.log(userData)
     try {
-      await axios.post(`${process.env.BASE_URL}/api/user`, userData)
-        .then((response) =>{
+     const response =  await axios.post(`${process.env.BASE_URL}/api/user`, userData)
+       
           console.log(response.data)
           toast.success("Sign uped", {
             position: "top-center",
@@ -27,8 +27,6 @@ function Signup() {
         } )
        
     
-      });
-
       setuserData({
         name: "",
         email: "",

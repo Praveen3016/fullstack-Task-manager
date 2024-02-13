@@ -9,7 +9,7 @@ function Showtask() {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-        axios.get(`${process.env.BASE_URL}/api/user/${fulluser._id}/work`)
+        axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${fulluser._id}/work`)
             .then((result) => {
                 if (Array.isArray(result.data)) {
                     setTasks(result.data);
