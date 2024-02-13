@@ -48,9 +48,9 @@ console.log(id)
         <>
        
             <h4 className='text-center text-white'>Show Task {tasks.length}</h4>
-            <div className='row w-100 d-flex justify-content-center'>
+            <div className='row w-100 ps-3 d-flex justify-content-center'>
                     {tasks.map((elem, index) => (
-                        <div className={`p-2 px-3 text-white  ${elem.status == "Completed" ? "bg-success " : ""} bg-primary bg-opacity-10 opacity-75 m-2 border border-opacity-10 rounded col-sm-7`} key={index}>
+                        <div className={`p-2 ms-3 px-3 text-white  ${elem.status == "Completed" ? "bg-success " : ""} bg-primary bg-opacity-10 opacity-75 m-2 border border-opacity-10 rounded col-sm-7`} key={index}>
                             <div className="d-flex justify-content-between">
                             <h5 className='m-0  '>{elem.title}</h5>
                             <TiDeleteOutline style={{cursor: "pointer"}} className='' onClick={ () => deletetask(elem._id)}/>
