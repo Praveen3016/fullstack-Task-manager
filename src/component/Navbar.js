@@ -13,7 +13,7 @@ function Navbar() {
 
 
   async function loggedOut() {
-    const respo = await axios.post('http://localhost:3000/api/logout');
+    const respo = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/logout`);
     console.log(respo.data);
     setuser(undefined);
     router.push('/login');
