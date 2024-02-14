@@ -14,7 +14,7 @@ import { CurrentuserContext } from '@/context/CurrentuserContext';
 
 function page() {
 
-  const {userid} = useContext(CurrentuserContext);
+  const {userid,tasks,settasks} = useContext(CurrentuserContext);
 
   // document.title = metadata.title;
 console.log(userid)
@@ -38,31 +38,41 @@ console.log(userid)
 
   async function formhandle(e){
     e.preventDefault();
-    console.log(e.target)
-try{
-  const response =  await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/works`,task)
-  console.log(response.data)
-  
-  toast.success("task is added",{
-  position: "top-center",
-
-});
-
-settask({
-  ...task,
-  title: "",
-  content: "",
-  status: "",
-})
-}
-catch(error)
-{
-  toast.error("task not added",{
-    position: "top-center",
-  });
-  console.log(error)
-toast.error("something error in post")
-}
+    if(task.title != "" && task.content != "" && task.status != "" )
+    {
+      console.log(e.target)
+      try{
+        const response =  await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/works`,task)
+        console.log(response.data)
+        
+        toast.success("task is added",{
+        position: "top-center",
+      
+      });
+      
+      settasks([...tasks ,task ])
+      settask({
+        ...task,
+        title: "",
+        content: "",
+        status: "",
+      })
+      }
+      catch(error)
+      {
+        toast.error("task not added",{
+          position: "top-center",
+        });
+        console.log(error)
+      toast.error("something error in post")
+      }
+    }
+    else{
+      toast.error("Enter data in form",{
+        position: "top-center",
+      });
+    }
+   
 }
 
   

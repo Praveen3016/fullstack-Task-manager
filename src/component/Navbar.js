@@ -20,7 +20,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="custom-navbar navbar navbar-expand-md navbar-dark bg-dark" style={{ backgroundColor: 'rgb(46 46 46)!important' }} aria-label="Furni navigation bar">
+    <nav className="custom-navbar  w-100 navbar navbar-expand-md navbar-dark bg-dark" style={{ backgroundColor: 'rgb(46 46 46)!important' }} aria-label="Furni navigation bar">
       <div className="container d-flex justify-content-evenly">
         <a className="navbar-brand" href="index.html">Work Book</a>
         <div className="collapse navbar-collapse d-flex justify-content-center" id="navbarsFurni">

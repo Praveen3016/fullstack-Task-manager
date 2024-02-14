@@ -6,8 +6,8 @@ import { useContext } from 'react';
 import { CurrentuserContext } from '@/context/CurrentuserContext';
 import { TiDeleteOutline } from "react-icons/ti";
  function Showtask() {
-    const { fulluser } = useContext(CurrentuserContext);
-    const [tasks, setTasks] = useState([]);
+    const { fulluser ,tasks,settasks } = useContext(CurrentuserContext);
+    // const [tasks, setTasks] = useState([]);
 
 
    async function deletetask(id)
@@ -20,7 +20,7 @@ const prompt = window.confirm("Delete");
          return id != elem._id
         })
 
-        setTasks(newtasks);
+        settasks(newtasks);
 console.log(id)
         const response = await axios.delete(`${process.env.NEXT_PUBLIC_BASE_URL}/api/works/${id}`);
         toast.success("Deleted", {
@@ -34,7 +34,7 @@ console.log(id)
         axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${fulluser._id}/work`)
             .then((result) => {
                 if (Array.isArray(result.data)) {
-                    setTasks(result.data);
+                    settasks(result.data);
                 } else {
                     console.error('Expected an array of tasks but received:', result.data);
                 }

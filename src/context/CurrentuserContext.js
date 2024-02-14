@@ -12,6 +12,8 @@ export function CurrentuserContextProvider({children}) {
     const [user ,setuser]= useState()
     const [userid , setuserid] = useState()
     const [fulluser , setfulluser] = useState("")
+    const [tasks, settasks] = useState([])
+
 
 useEffect(()=>{
 
@@ -31,7 +33,7 @@ useEffect(()=>{
 },[])
 
   return (
-    <CurrentuserContext.Provider value={{user,setuser,setuserid,userid,fulluser}}>
+    <CurrentuserContext.Provider value={{user,setuser,setuserid,userid,fulluser,tasks,settasks}}>
         {children}
     </CurrentuserContext.Provider>
   )
